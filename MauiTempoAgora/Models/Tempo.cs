@@ -1,5 +1,4 @@
-﻿using AuthenticationServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +22,7 @@ namespace MauiTempoAgora.Models
 
         public string? Sunset { get; set; }
 
-        public string? Weatcher { get; set; }
+        public string? Weather { get; set; }
 
         public string? WeatherDescription { get; set; }
     }
