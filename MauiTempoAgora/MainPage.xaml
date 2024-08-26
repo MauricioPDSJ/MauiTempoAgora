@@ -5,7 +5,7 @@
 
     <ScrollView>
         <StackLayout Spacing="10" Margin="10">
-            <Button Text="Obter Localização" Clicked="Button_Clicked" />
+            <Button Text="Obter Localização" Clicked="Button_Clicked" HorizontalOptions="Center" Margin="10" BackgroundColor="Green" />
 
             <Label Text="Latitude:" />
             <Entry x:Name="lbl_latitude" Text="37,421998333333335" />
@@ -13,11 +13,11 @@
             <Label Text="Longitude:" />
             <Entry x:Name="lbl_longitude" Text="-122,084" />
 
-            <Button Text="Obter placemark" Clicked="Button_Clicked_1" />
+            <Button Text="Obter placemark" Clicked="Button_Clicked_1" HorizontalOptions="Center" Margin="10" BackgroundColor="Green"/>
 
             <Label x:Name="lbl_reverso" Text="Dados gerais de Local" />
 
-            <Button Text="Obter Previsão do Tempo" Clicked="Button_Clicked_2" />
+            <Button Text="Obter Previsão do Tempo" Clicked="Button_Clicked_2" HorizontalOptions="Center" Margin="10" BackgroundColor="Green"/>
 
             <Label x:Name="lbl_previsao" />
         </StackLayout>

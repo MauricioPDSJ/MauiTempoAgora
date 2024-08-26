@@ -1,10 +1,8 @@
 ﻿using MauiTempoAgora.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.JavaScript;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 
 namespace MauiTempoAgora.Service
 {
@@ -16,8 +14,8 @@ namespace MauiTempoAgora.Service
             // https://home.openweathermap.org/api_keys
             string appId = "6135072afe7f8cec1537d5cb08a5a1a2";
 
-            string url = $"https://api.openweather.org/data/2.5/weather?1=" +
-                         $"{cidade}&unit=metric&appid{appId}";
+            string url = $"https://api.openweathermap.org/data/2.5/weather?" +
+                         $"q={cidade}&unit=metric&appid{appId}";
 
             Tempo tempo = null;
 
@@ -29,7 +27,17 @@ namespace MauiTempoAgora.Service
                 {
                     string json = response.Content.ReadAsStringAsync().Result;
 
-                    var rascunho = JSObject.Parse(json);
+                    Debug.WriteLine("----------------------------");
+                    Debug.WriteLine(json);
+                    Debug.WriteLine("----------------------------");
+
+                    var rascunho = JObject.Parse(json);
+
+                    Debug.WriteLine("------------------------------------");
+                    Debug.WriteLine(rascunho);
+                    Debug.WriteLine("------------------------------------");
+
+
 
                     DateTime time = new DateTime(1970, 1, 1, 0, 0, 0, 0);
                     DateTime sunrise = time.AddSeconds((double)rascunho["sys"]["sunrise"]).ToLocalTime();
